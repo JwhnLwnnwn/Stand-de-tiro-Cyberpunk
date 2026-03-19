@@ -10,12 +10,12 @@ uniform float saturation = 1.05;
 uniform float gamma      = 1.0;
 
 // --- SCANLINE ---
-uniform float scanline_strength = 0.25;
+uniform float scanline_strength = 0.15;
 uniform float scanline_density  = 1.0;
 uniform float scanline_speed    = 0.5;
 
 // --- MOVIMENTO ---
-uniform float jitter_px = 0.2;
+uniform float jitter_px = 0.1;
 uniform float wobble_px = 0.2;
 
 // --- GLOW ---

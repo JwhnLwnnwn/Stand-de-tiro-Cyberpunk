@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://hl40hn3r8fre" path="res://assets/test-images/rubber.png" id="1_7761c"]
 [ext_resource type="Texture2D" uid="uid://b2lby54uaukwe" path="res://assets/test-images/tile-white.png" id="2_7djw4"]
 [ext_resource type="PackedScene" uid="uid://cblxbxd4egvuk" path="res://objects/player.tscn" id="3_13vgm"]
-[ext_resource type="PackedScene" uid="uid://cbwxpidssavgw" path="res://enemy_ia.tscn" id="4_vtmwr"]
-[ext_resource type="Shader" uid="uid://dsu6dcxt0qmpo" path="res://objects/shaders/shader_vhs.gdshader" id="7_dsaxa"]
+[ext_resource type="PackedScene" uid="uid://cbwxpidssavgw" path="res://objects/enemies/enemy_ia.tscn" id="4_vtmwr"]
+[ext_resource type="Shader" uid="uid://dsu6dcxt0qmpo" path="res://effects/shaders/shader_vhs.gdshader" id="7_dsaxa"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_doahx"]
 texture = ExtResource("1_5m17q")

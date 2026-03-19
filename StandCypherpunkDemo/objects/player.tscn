@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cblxbxd4egvuk"]
+[gd_scene format=3 uid="uid://cblxbxd4egvuk"]
 
-[ext_resource type="Script" path="res://objects/player.gd" id="1_vlhpq"]
-[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://bullet.tscn" id="2_eywii"]
+[ext_resource type="Script" uid="uid://dejea3ritr5o5" path="res://objects/player.gd" id="1_vlhpq"]
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="2_eywii"]
 [ext_resource type="Texture2D" uid="uid://bvnbppvhxug57" path="res://assets/test-images/personagem-jogador.png" id="3_uybkd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v3es"]
