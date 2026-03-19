@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://salp7717oded"]
+
+[ext_resource type="FontFile" uid="uid://d0pdl3lsvsyxo" path="res://UI/fontes/Pixeteam.ttf" id="1_j4ng2"]
+
+[resource]
+Button/colors/font_color = Color(0.921569, 0.0666667, 0.541176, 1)
+Button/fonts/font = ExtResource("1_j4ng2")

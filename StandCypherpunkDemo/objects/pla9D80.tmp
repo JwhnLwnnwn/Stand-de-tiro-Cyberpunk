@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cblxbxd4egvuk"]
+
+[ext_resource type="Script" path="res://objects/player.gd" id="1_vlhpq"]
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://bullet.tscn" id="2_eywii"]
+[ext_resource type="Texture2D" uid="uid://bvnbppvhxug57" path="res://assets/test-images/personagem-jogador.png" id="3_uybkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v3es"]
+size = Vector2(28, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_vlhpq")
+bullet_scene = ExtResource("2_eywii")
+
+[node name="Weapon" type="Polygon2D" parent="."]
+position = Vector2(-2, -4)
+color = Color(0.537255, 0, 0.027451, 1)
+polygon = PackedVector2Array(11, 1, 12, -14, 8, -14)
+
+[node name="Muzzle" type="Marker2D" parent="."]
+
+[node name="Texture" type="Sprite2D" parent="."]
+position = Vector2(-1.90735e-06, -2.86102e-06)
+rotation = 3.14159
+scale = Vector2(0.305555, 0.305555)
+texture = ExtResource("3_uybkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_1v3es")
+
+[node name="ShootPart" type="Node2D" parent="."]
+position = Vector2(8, -20)
