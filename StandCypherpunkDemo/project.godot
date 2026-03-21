@@ -19,17 +19,20 @@ run/main_scene="uid://f5oy4xbswrf0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
-[autoload]
+[audio]
 
-ThemeManager="*uid://wdoevgtwhf0c"
+buses/default_bus_layout="uid://dek3n4iqmadxx"
 
 [display]
 
 window/size/viewport_width=640
-window/size/viewport_height=360
+window/size/viewport_height=352
+window/size/mode=3
+window/size/resizable=false
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [input]
 
