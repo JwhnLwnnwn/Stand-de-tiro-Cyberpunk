@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://b7ti8xcwbjkdu"]
+
+[ext_resource type="Texture2D" uid="uid://cxoe7hlqqys3u" path="res://assets/screens/tela_tutorial.png" id="1_jelwi"]
+[ext_resource type="Theme" uid="uid://dm5vtt7gncpsa" path="res://UI/theme/tema_personalizado.tres" id="2_urufc"]
+
+[node name="TutorialScene" type="CanvasLayer" unique_id=323802088]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1923282918]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.033853278, 0.033853278, 0.033853274, 0.09019608)
+
+[node name="TelaTutorial" type="Sprite2D" parent="." unique_id=991101062]
+position = Vector2(320, 180)
+texture = ExtResource("1_jelwi")
+
+[node name="Shoot" type="Label" parent="TelaTutorial" unique_id=111261209]
+offset_left = -99.0
+offset_top = -121.0
+offset_right = 163.0
+offset_bottom = -98.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE O MOUSE PARA OLHAR E ATIRAR"
+vertical_alignment = 1
+
+[node name="Movement" type="Label" parent="TelaTutorial" unique_id=381970434]
+offset_left = -100.0
+offset_top = -66.0
+offset_right = 162.0
+offset_bottom = -43.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE WASD PARA CAMINHAR"
+vertical_alignment = 1
+
+[node name="Interact" type="Label" parent="TelaTutorial" unique_id=1348968629]
+offset_left = -100.0
+offset_top = -11.0
+offset_right = 162.0
+offset_bottom = 12.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "use e para interagir"
+vertical_alignment = 1
+
+[node name="Pause" type="Label" parent="TelaTutorial" unique_id=649536759]
+offset_left = -99.0
+offset_top = 44.0
+offset_right = 163.0
+offset_bottom = 67.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "use esc para pausar"
+vertical_alignment = 1

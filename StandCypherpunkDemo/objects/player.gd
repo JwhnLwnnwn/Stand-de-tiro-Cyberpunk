@@ -14,23 +14,24 @@ var _is_moving: bool = false
 var _can_shoot: bool = true
 var _recoil_tween: Tween
 
-func _physics_process(_delta: float) -> void:
-	_move()
+func _physics_process(delta: float) -> void:
+	_move(delta)
 	_aim()
 	_shoot()
 
-func _move() -> void:
+func _move(delta: float) -> void:
 	var dir = Vector2(
 		Input.get_axis("move_left", "move_right"),
 		Input.get_axis("move_up", "move_down")
 	).normalized()
 
-	var target_velocity = dir * PLAYER_VELOCITY;
-	velocity = lerp(velocity, target_velocity, 0.2);
-	move_and_slide();
+	var target_velocity = dir * PLAYER_VELOCITY
+	
+	velocity = lerp(velocity, target_velocity, 10 * delta)
+	move_and_slide()
 
 func _aim() -> void:
-	var mouse_pos: Vector2 = get_global_mouse_position()
+	var mouse_pos = get_global_mouse_position()
 	var aim_direction: Vector2 = (mouse_pos - global_position).normalized()
 	rotation = aim_direction.angle() + PI/2
 
