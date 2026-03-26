@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://4q5o0m7f6jbt"]
+
+[ext_resource type="Script" uid="uid://nq8jl5dn1dhu" path="res://objects/enemies/torreta_ia.gd" id="1_ee411"]
+[ext_resource type="Texture2D" uid="uid://bh71qhwinefpw" path="res://assets/sprites/torreta.png" id="1_ra8bd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ee411"]
+size = Vector2(10, 28)
+
+[node name="Torreta" type="CharacterBody2D" unique_id=1997638712]
+script = ExtResource("1_ee411")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1016625336]
+texture = ExtResource("1_ra8bd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1594235368]
+shape = SubResource("RectangleShape2D_ee411")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=791283664]

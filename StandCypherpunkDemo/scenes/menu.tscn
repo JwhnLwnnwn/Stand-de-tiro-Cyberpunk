@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://f5oy4xbswrf0"]
 
-[ext_resource type="Texture2D" uid="uid://crq4g8j1n3r8k" path="res://assets/gray-scale/menu-gray-scale.png" id="1_67owj"]
+[ext_resource type="Texture2D" uid="uid://je83n413talx" path="res://assets/screens/tela_inicial_col.png" id="1_v86rl"]
 [ext_resource type="Theme" uid="uid://dm5vtt7gncpsa" path="res://UI/theme/tema_personalizado.tres" id="2_con2f"]
-[ext_resource type="Texture2D" uid="uid://cryer04d342xe" path="res://UI/button/flat_button_gd.png" id="2_mhnvy"]
+[ext_resource type="Script" uid="uid://cxnducqpt5l06" path="res://UI/animation/hover_effect_btn.gd" id="2_v86rl"]
 [ext_resource type="Shader" uid="uid://c77k01h2t31h8" path="res://effects/shaders/vhs_wiggle_credits.gdshader" id="4_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://beyuh171oy613" path="res://effects/lights/light.png" id="5_4ytvr"]
+[ext_resource type="AudioStream" uid="uid://0nv8x002fwpa" path="res://assets/music/cyberpunk.mp3" id="8_13sgg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4ytvr"]
 shader = ExtResource("4_mhnvy")
@@ -19,6 +20,8 @@ shader_parameter/jitter_px = 1.8
 shader_parameter/wobble_px = 1.5
 shader_parameter/glow_strength = 0.25
 shader_parameter/glow_threshold = 0.65
+shader_parameter/vignette_strength = 0.35
+shader_parameter/vignette_softness = 0.6
 
 [node name="MenuControl" type="Control" unique_id=791704901]
 layout_mode = 3
@@ -35,7 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_67owj")
+texture = ExtResource("1_v86rl")
 expand_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=1870420231]
@@ -52,26 +55,27 @@ theme_override_constants/margin_bottom = 20
 layout_direction = 1
 layout_mode = 0
 offset_left = 228.0
-offset_top = 146.0
+offset_top = 143.0
 offset_right = 408.0
-offset_bottom = 316.0
+offset_bottom = 309.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1436225990]
 layout_direction = 1
 layout_mode = 2
 size_flags_horizontal = 6
+size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
-theme_override_constants/separation = 10
+theme_override_constants/separation = 14
 alignment = 1
 
 [node name="start_btn" type="TextureButton" parent="HBoxContainer/VBoxContainer" unique_id=1150100412]
-custom_minimum_size = Vector2(130, 30)
+custom_minimum_size = Vector2(145, 38)
 layout_direction = 1
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("2_mhnvy")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("2_v86rl")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/start_btn" unique_id=704701848]
 layout_mode = 1
@@ -88,13 +92,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="tutorial_btn" type="TextureButton" parent="HBoxContainer/VBoxContainer" unique_id=536510554]
-custom_minimum_size = Vector2(138, 30)
+custom_minimum_size = Vector2(145, 40)
 layout_direction = 1
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("2_mhnvy")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("2_v86rl")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/tutorial_btn" unique_id=431319851]
 layout_mode = 1
@@ -111,13 +115,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="exit_btn" type="TextureButton" parent="HBoxContainer/VBoxContainer" unique_id=621184412]
-custom_minimum_size = Vector2(135, 30)
+custom_minimum_size = Vector2(145, 40)
 layout_direction = 1
 layout_mode = 2
 size_flags_vertical = 4
-texture_normal = ExtResource("2_mhnvy")
 ignore_texture_size = true
 stretch_mode = 0
+script = ExtResource("2_v86rl")
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/exit_btn" unique_id=349033338]
 layout_mode = 1
@@ -133,8 +137,23 @@ text = "SAIR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=32137465]
-layout_mode = 2
+[node name="TitleLight" type="PointLight2D" parent="." unique_id=2056541067]
+position = Vector2(451, 74)
+scale = Vector2(0.07920114, 0.07776909)
+color = Color(0.8391846, 0.48220944, 0.39184228, 1)
+energy = 1.04
+texture = ExtResource("5_4ytvr")
+
+[node name="WindowLight" type="PointLight2D" parent="." unique_id=1751128886]
+position = Vector2(156, 193.50002)
+scale = Vector2(0.32169127, 0.31020218)
+color = Color(0.53627735, 0.5458082, 0.9248561, 1)
+energy = 0.73
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.8862745)
+shadow_filter_smooth = 4.6
+texture = ExtResource("5_4ytvr")
+texture_scale = 0.51
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1412259334]
 material = SubResource("ShaderMaterial_4ytvr")
@@ -144,10 +163,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
-[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1751128886]
-position = Vector2(154, 194)
-scale = Vector2(0.20947267, 0.20556642)
-color = Color(0.53627735, 0.5458082, 0.9248561, 1)
-energy = 1.35
-texture = ExtResource("5_4ytvr")
+[node name="Cyberpunk" type="AudioStreamPlayer" parent="." unique_id=1074464951]
+stream = ExtResource("8_13sgg")
+autoplay = true
+bus = &"Trilha"
+parameters/looping = true
+
+[connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_hover_enter"]
+[connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_hover_exit"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/tutorial_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_tutorial_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/exit_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_exit_btn_pressed"]

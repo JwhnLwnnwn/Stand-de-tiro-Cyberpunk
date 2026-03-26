@@ -10,8 +10,8 @@ uniform float saturation = 1.05;
 uniform float gamma      = 1.0;
 
 // --- SCANLINE ---
-uniform float scanline_strength = 0.15;
-uniform float scanline_density  = 1.0;
+uniform float scanline_strength = 0.05;
+uniform float scanline_density  = 0.1;
 uniform float scanline_speed    = 0.5;
 
 // --- MOVIMENTO ---
@@ -19,8 +19,12 @@ uniform float jitter_px = 0.1;
 uniform float wobble_px = 0.2;
 
 // --- GLOW ---
-uniform float glow_strength  = 0.18;
+uniform float glow_strength  = 0.4;
 uniform float glow_threshold = 0.7;
+
+// --- VINHETA ---
+uniform float vignette_strength = 0.5;
+uniform float vignette_softness = 0.1;
 
 vec3 apply_color(vec3 c) {
 	c *= brightness;
@@ -56,7 +60,7 @@ void fragment() {
 
 	vec3 col = sample_screen(uv);
 
-	// --- proteção de texto (evita blur em áreas claras) ---
+	// --- proteção de texto ---
 	float lum = dot(col, vec3(0.299, 0.587, 0.114));
 	vec3 original = col;
 	float reduce = smoothstep(0.5, 0.9, lum);
@@ -80,6 +84,12 @@ void fragment() {
 	vec3 glow = max(blur - vec3(glow_threshold), vec3(0.0));
 
 	col += glow * glow_strength * (0.5 + 0.5 * br);
+
+	// --- VINHETA ---
+	vec2 center = uv - 0.5;
+	float dist = length(center);
+	float vignette = smoothstep(vignette_softness, 0.8, dist);
+	col *= (1.0 - vignette * vignette_strength);
 
 	col = apply_color(col);
 

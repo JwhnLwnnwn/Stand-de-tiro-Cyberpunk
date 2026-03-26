@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbwxpidssavgw"]
+[gd_scene format=3 uid="uid://cbwxpidssavgw"]
 
-[ext_resource type="Script" path="res://objects/enemies/EnemyIa.gd" id="1_s6wtv"]
-[ext_resource type="Texture2D" uid="uid://hxnc1l34kvjf" path="res://assets/test-images/test.png" id="2_coxqk"]
+[ext_resource type="Script" uid="uid://b016myoal2hqn" path="res://objects/enemies/human_ia.gd" id="1_s6wtv"]
+[ext_resource type="Texture2D" uid="uid://dw0c6kebh1aoe" path="res://assets/sprites/inimigo_idle.png" id="2_47eo2"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdyrw"]
-size = Vector2(26, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47eo2"]
+size = Vector2(31, 19)
 
-[node name="EnemyIa" type="CharacterBody2D"]
+[node name="EnemyIa" type="CharacterBody2D" unique_id=2073523965]
 script = ExtResource("1_s6wtv")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_coxqk")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1343340074]
+texture = ExtResource("2_47eo2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_tdyrw")
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=466484884]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1793181746]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_47eo2")

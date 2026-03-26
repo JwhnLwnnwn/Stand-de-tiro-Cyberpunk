@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://b7ti8xcwbjkdu"]
+
+[ext_resource type="Script" uid="uid://d3s2pcs4kttpg" path="res://scenes/tutorial_scene.gd" id="1_urufc"]
+[ext_resource type="Theme" uid="uid://dm5vtt7gncpsa" path="res://UI/theme/tema_personalizado.tres" id="2_urufc"]
+[ext_resource type="Texture2D" uid="uid://bqq02ts3lhu38" path="res://assets/screens/tela_tutorial_bg.png" id="2_yf4vk"]
+[ext_resource type="Texture2D" uid="uid://dn5daoufirk4f" path="res://UI/button/back_btn.png" id="4_tbeqj"]
+[ext_resource type="Texture2D" uid="uid://cywoggs3nvxo7" path="res://UI/button/left_seta.png" id="5_k7w8g"]
+[ext_resource type="AudioStream" uid="uid://bk6hi1hjb6r2p" path="res://UI/button/computer_click.mp3" id="6_k7w8g"]
+
+[node name="TutorialScene" type="CanvasLayer" unique_id=323802088]
+script = ExtResource("1_urufc")
+
+[node name="Control" type="Control" parent="." unique_id=1848216373]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control" unique_id=1923282918]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3254902, 0.16078432, 0.3254902, 0.41960785)
+
+[node name="Background" type="Sprite2D" parent="Control" unique_id=991101062]
+position = Vector2(320, 180)
+texture = ExtResource("2_yf4vk")
+
+[node name="Shoot" type="Label" parent="Control" unique_id=111261209]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 59.0
+offset_right = 483.0
+offset_bottom = 82.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE O MOUSE PARA OLHAR E ATIRAR"
+vertical_alignment = 1
+
+[node name="Movement" type="Label" parent="Control" unique_id=381970434]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 114.0
+offset_right = 482.0
+offset_bottom = 137.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE WASD PARA CAMINHAR"
+vertical_alignment = 1
+
+[node name="Interact" type="Label" parent="Control" unique_id=1348968629]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 169.0
+offset_right = 482.0
+offset_bottom = 192.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE E PARA INTERAGIR"
+vertical_alignment = 1
+
+[node name="Pause" type="Label" parent="Control" unique_id=649536759]
+layout_mode = 0
+offset_left = 221.0
+offset_top = 224.0
+offset_right = 483.0
+offset_bottom = 247.0
+theme = ExtResource("2_urufc")
+theme_override_font_sizes/font_size = 9
+text = "USE ESC PARA PAUSAR"
+vertical_alignment = 1
+
+[node name="back_btn" type="TextureButton" parent="Control" unique_id=1508193926]
+clip_contents = true
+custom_minimum_size = Vector2(32, 20)
+layout_mode = 0
+offset_left = 156.0
+offset_top = 266.0
+offset_right = 188.0
+offset_bottom = 286.0
+
+[node name="TextureRect" type="TextureRect" parent="Control/back_btn" unique_id=2120649811]
+custom_minimum_size = Vector2(32, 20)
+layout_mode = 0
+offset_top = -6.0
+offset_right = 32.0
+offset_bottom = 26.0
+texture = ExtResource("4_tbeqj")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="back_label" type="TextureRect" parent="Control/back_btn" unique_id=80711081]
+layout_mode = 0
+offset_top = -5.0
+offset_right = 32.0
+offset_bottom = 27.0
+texture = ExtResource("5_k7w8g")
+
+[node name="SFX" type="AudioStreamPlayer" parent="." unique_id=1841878002]
+stream = ExtResource("6_k7w8g")
+bus = &"UI Sfx"
+
+[connection signal="closed" from="." to="." method="_on_closed"]
+[connection signal="button_up" from="Control/back_btn" to="." method="_on_back_btn_button_up"]
+[connection signal="pressed" from="Control/back_btn" to="." method="_on_back_btn_pressed"]
