@@ -10,14 +10,14 @@
 [ext_resource type="PackedScene" uid="uid://b2yy80lhb2kna" path="res://scenes/pause_menu.tscn" id="7_wh0gb"]
 [ext_resource type="PackedScene" uid="uid://claa2k2b66mwk" path="res://objects/enemies/drone.tscn" id="9_vax5a"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_doahx"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vax5a"]
 texture = ExtResource("1_5m17q")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_tos8e"]
-sources/1 = SubResource("TileSetAtlasSource_doahx")
+sources/1 = SubResource("TileSetAtlasSource_vax5a")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a73po"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4sdcb"]
 texture = ExtResource("1_7761c")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -28,7 +28,7 @@ texture = ExtResource("1_7761c")
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gf8fl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eht18"]
 texture = ExtResource("2_7djw4")
 0:0/0 = 0
 1:0/0 = 0
@@ -37,8 +37,8 @@ texture = ExtResource("2_7djw4")
 
 [sub_resource type="TileSet" id="TileSet_svu76"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_a73po")
-sources/1 = SubResource("TileSetAtlasSource_gf8fl")
+sources/0 = SubResource("TileSetAtlasSource_4sdcb")
+sources/1 = SubResource("TileSetAtlasSource_eht18")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ykvlf"]
 shader = ExtResource("7_dsaxa")

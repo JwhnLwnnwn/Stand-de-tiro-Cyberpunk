@@ -7,10 +7,19 @@
 
 [node name="PauseMenu" type="CanvasLayer" unique_id=379174255]
 process_mode = 3
-follow_viewport_enabled = true
 script = ExtResource("1_kukqi")
 
-[node name="bg_overlay" type="ColorRect" parent="." unique_id=1295303579]
+[node name="Control" type="Control" parent="." unique_id=1525735060]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="bg_overlay" type="ColorRect" parent="Control" unique_id=1295303579]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -20,29 +29,30 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 color = Color(0, 0.25490198, 0.35686275, 0.27450982)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1199193314]
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=1199193314]
 position = Vector2(321, 180)
 texture = ExtResource("2_5d2l8")
 
-[node name="menu_holder" type="VBoxContainer" parent="." unique_id=994271406]
+[node name="menu_holder" type="VBoxContainer" parent="Control" unique_id=994271406]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -85.5
-offset_top = -20.0
+offset_top = -64.0
 offset_right = 85.5
-offset_bottom = 20.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="resume_btn" type="TextureButton" parent="menu_holder" unique_id=1914571797]
+[node name="resume_btn" type="TextureButton" parent="Control/menu_holder" unique_id=1914571797]
 custom_minimum_size = Vector2(140, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_5d2l8")
 
-[node name="Label" type="Label" parent="menu_holder/resume_btn" unique_id=1468720561]
+[node name="Label" type="Label" parent="Control/menu_holder/resume_btn" unique_id=1468720561]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,12 +66,12 @@ text = "DESPAUSAR"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="tutorial_btn" type="TextureButton" parent="menu_holder" unique_id=1355250585]
+[node name="tutorial_btn" type="TextureButton" parent="Control/menu_holder" unique_id=1355250585]
 custom_minimum_size = Vector2(145, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_5d2l8")
 
-[node name="Label" type="Label" parent="menu_holder/tutorial_btn" unique_id=1090475473]
+[node name="Label" type="Label" parent="Control/menu_holder/tutorial_btn" unique_id=1090475473]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -75,12 +85,12 @@ text = "TUTORIAL"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="menu_btn" type="TextureButton" parent="menu_holder" unique_id=1211755802]
+[node name="menu_btn" type="TextureButton" parent="Control/menu_holder" unique_id=1211755802]
 custom_minimum_size = Vector2(145, 40)
 layout_mode = 2
 texture_normal = ExtResource("3_5d2l8")
 
-[node name="Label" type="Label" parent="menu_holder/menu_btn" unique_id=39341066]
+[node name="Label" type="Label" parent="Control/menu_holder/menu_btn" unique_id=39341066]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -94,6 +104,6 @@ text = "MENU"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
-[connection signal="pressed" from="menu_holder/tutorial_btn" to="." method="_on_tutorial_btn_pressed"]
-[connection signal="pressed" from="menu_holder/menu_btn" to="." method="_on_menu_btn_pressed"]
+[connection signal="pressed" from="Control/menu_holder/resume_btn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="Control/menu_holder/tutorial_btn" to="." method="_on_tutorial_btn_pressed"]
+[connection signal="pressed" from="Control/menu_holder/menu_btn" to="." method="_on_menu_btn_pressed"]
