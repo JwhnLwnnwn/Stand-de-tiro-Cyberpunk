@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxoe7hlqqys3u"
-path="res://.godot/imported/tela_tutorial.png-267ac5713c21ecb81029e09e2d8e0a92.ctex"
+uid="uid://dc4gxie0i7apd"
+path="res://.godot/imported/transition9.png-ba935276878b75d23333b90cda296751.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/screens/tela_tutorial.png"
-dest_files=["res://.godot/imported/tela_tutorial.png-267ac5713c21ecb81029e09e2d8e0a92.ctex"]
+source_file="res://UI/transition/transitions_frame/transition9.png"
+dest_files=["res://.godot/imported/transition9.png-ba935276878b75d23333b90cda296751.ctex"]
 
 [params]
 

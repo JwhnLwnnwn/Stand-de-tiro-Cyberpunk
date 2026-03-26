@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byqlw84fpua4c"
-path="res://.godot/imported/Neon light.png-3f52877c860d7a3737aad4e5fa5005e6.ctex"
+uid="uid://b1i4vo68nc5bg"
+path="res://.godot/imported/transition14.png-9daac8ab2d2e9d97c994a7518e1365da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/screens/Neon light.png"
-dest_files=["res://.godot/imported/Neon light.png-3f52877c860d7a3737aad4e5fa5005e6.ctex"]
+source_file="res://UI/transition/transitions_frame/transition14.png"
+dest_files=["res://.godot/imported/transition14.png-9daac8ab2d2e9d97c994a7518e1365da.ctex"]
 
 [params]
 
