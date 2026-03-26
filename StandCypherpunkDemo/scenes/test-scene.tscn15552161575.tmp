@@ -8,7 +8,6 @@
 [ext_resource type="Shader" uid="uid://dsu6dcxt0qmpo" path="res://effects/shaders/shader_vhs.gdshader" id="7_dsaxa"]
 [ext_resource type="PackedScene" uid="uid://4q5o0m7f6jbt" path="res://objects/enemies/torreta.tscn" id="7_pyd17"]
 [ext_resource type="PackedScene" uid="uid://b2yy80lhb2kna" path="res://scenes/pause_menu.tscn" id="7_wh0gb"]
-[ext_resource type="PackedScene" uid="uid://claa2k2b66mwk" path="res://objects/enemies/drone.tscn" id="9_vax5a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_doahx"]
 texture = ExtResource("1_5m17q")
@@ -103,19 +102,10 @@ position = Vector2(150, 39)
 position = Vector2(458, 38)
 
 [node name="EnemyIa3" parent="." unique_id=2073523965 instance=ExtResource("4_vtmwr")]
-position = Vector2(383, 153)
+position = Vector2(416, 137)
 
 [node name="EnemyIa2" parent="." unique_id=1268862112 instance=ExtResource("4_vtmwr")]
-position = Vector2(303, 154)
+position = Vector2(303, 104)
 
 [node name="EnemyIa" parent="." unique_id=1272631763 instance=ExtResource("4_vtmwr")]
-position = Vector2(223, 154)
-
-[node name="Drone3" parent="." unique_id=1896149847 instance=ExtResource("9_vax5a")]
-position = Vector2(343, 86)
-
-[node name="Drone2" parent="." unique_id=898379260 instance=ExtResource("9_vax5a")]
-position = Vector2(305, 86)
-
-[node name="Drone" parent="." unique_id=301232597 instance=ExtResource("9_vax5a")]
-position = Vector2(267, 86)
+position = Vector2(192, 138)
