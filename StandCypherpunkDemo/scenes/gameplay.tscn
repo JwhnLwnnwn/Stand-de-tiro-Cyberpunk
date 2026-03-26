@@ -28,6 +28,13 @@ scale = Vector2(2.8402774, 2.840278)
 texture = ExtResource("1_4bh5q")
 metadata/_edit_lock_ = true
 
+[node name="VHS" type="ColorRect" parent="." unique_id=1593453139]
+material = SubResource("ShaderMaterial_bhmdk")
+offset_left = -209.0
+offset_top = -174.0
+offset_right = 869.0
+offset_bottom = 492.0
+
 [node name="Range" type="Sprite2D" parent="." unique_id=378437065]
 position = Vector2(308, 175)
 texture = ExtResource("2_101mb")
@@ -38,12 +45,6 @@ position = Vector2(262, 262)
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=8764812]
 offset = Vector2(0, -80)
 position_smoothing_enabled = true
-
-[node name="VHS" type="ColorRect" parent="." unique_id=1593453139]
-visible = false
-material = SubResource("ShaderMaterial_bhmdk")
-offset_right = 480.0
-offset_bottom = 270.0
 
 [node name="WallsDelimiter" type="StaticBody2D" parent="." unique_id=960710079]
 
