@@ -1,18 +1,14 @@
 [gd_scene format=3 uid="uid://nv00lp075l6g"]
 
 [ext_resource type="Texture2D" uid="uid://bl08brc7fqxec" path="res://assets/background/vazio.png" id="1_4bh5q"]
-[ext_resource type="Texture2D" uid="uid://cevtxjte6rwi4" path="res://assets/scenario/range.png" id="2_101mb"]
+[ext_resource type="Script" uid="uid://dkp0dty3d2rn8" path="res://scenes/gameplay.gd" id="1_e124b"]
 [ext_resource type="PackedScene" uid="uid://cblxbxd4egvuk" path="res://objects/player.tscn" id="2_e124b"]
-[ext_resource type="Shader" uid="uid://dsu6dcxt0qmpo" path="res://effects/shaders/shader_vhs.gdshader" id="3_101mb"]
+[ext_resource type="PackedScene" uid="uid://bc0yjwtqg1rn2" path="res://objects/cenario/RangeMira.tscn" id="3_101mb"]
 [ext_resource type="PackedScene" uid="uid://b2yy80lhb2kna" path="res://scenes/pause_menu.tscn" id="4_hbo4f"]
 [ext_resource type="PackedScene" uid="uid://4q5o0m7f6jbt" path="res://objects/enemies/torreta.tscn" id="5_ctvyo"]
 [ext_resource type="PackedScene" uid="uid://cbwxpidssavgw" path="res://objects/enemies/enemy_ia.tscn" id="6_qixtg"]
 [ext_resource type="PackedScene" uid="uid://claa2k2b66mwk" path="res://objects/enemies/drone.tscn" id="7_nt65e"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhmdk"]
-shader = ExtResource("3_101mb")
-shader_parameter/distortion = 0.002
-shader_parameter/scanline_intensity = 0.01
+[ext_resource type="PackedScene" uid="uid://bs2tdf7m0kw6" path="res://objects/interactive_simulation/objectStart.tscn" id="9_101mb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e124b"]
 size = Vector2(1757, 42)
@@ -20,7 +16,8 @@ size = Vector2(1757, 42)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_101mb"]
 size = Vector2(37, 898)
 
-[node name="Gameplay" type="Node2D" unique_id=2071805168]
+[node name="Gameplay" type="Node2D" unique_id=2071805168 groups=["gameplay"]]
+script = ExtResource("1_e124b")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1080162065]
 position = Vector2(318, 181)
@@ -28,65 +25,60 @@ scale = Vector2(2.8402774, 2.840278)
 texture = ExtResource("1_4bh5q")
 metadata/_edit_lock_ = true
 
-[node name="VHS" type="ColorRect" parent="." unique_id=1593453139]
-material = SubResource("ShaderMaterial_bhmdk")
-offset_left = -209.0
-offset_top = -174.0
-offset_right = 869.0
-offset_bottom = 492.0
+[node name="RangeMira" parent="." unique_id=1998623109 instance=ExtResource("3_101mb")]
+position = Vector2(308, 174)
 
-[node name="Range" type="Sprite2D" parent="." unique_id=378437065]
-position = Vector2(308, 175)
-texture = ExtResource("2_101mb")
-
-[node name="Player" parent="." unique_id=673219421 instance=ExtResource("2_e124b")]
-position = Vector2(262, 262)
+[node name="Player" parent="." unique_id=673219421 groups=["player"] instance=ExtResource("2_e124b")]
+position = Vector2(319, 257)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=8764812]
 offset = Vector2(0, -80)
 position_smoothing_enabled = true
 
+[node name="ObjectStart" parent="." unique_id=869263224 instance=ExtResource("9_101mb")]
+position = Vector2(181, 293.49)
+
 [node name="WallsDelimiter" type="StaticBody2D" parent="." unique_id=960710079]
 
 [node name="Bottom" type="CollisionShape2D" parent="WallsDelimiter" unique_id=977167633]
-position = Vector2(312, 515)
+position = Vector2(312, 487)
 shape = SubResource("RectangleShape2D_e124b")
 
 [node name="Top" type="CollisionShape2D" parent="WallsDelimiter" unique_id=1451171304]
-position = Vector2(322, -199)
+position = Vector2(320, -121)
 shape = SubResource("RectangleShape2D_e124b")
 
 [node name="Left" type="CollisionShape2D" parent="WallsDelimiter" unique_id=1539365096]
-position = Vector2(-227, 187)
+position = Vector2(-159, 181)
 shape = SubResource("RectangleShape2D_101mb")
 
 [node name="Right" type="CollisionShape2D" parent="WallsDelimiter" unique_id=1756876956]
-position = Vector2(889, 183)
+position = Vector2(744, 188)
 shape = SubResource("RectangleShape2D_101mb")
 
 [node name="PauseMenu" parent="." unique_id=379174255 instance=ExtResource("4_hbo4f")]
 visible = false
 
-[node name="Torreta2" parent="." unique_id=1997638712 instance=ExtResource("5_ctvyo")]
+[node name="Torreta2" parent="." unique_id=1997638712 groups=["enemies"] instance=ExtResource("5_ctvyo")]
 position = Vector2(185, 48)
 
-[node name="Torreta" parent="." unique_id=2015839753 instance=ExtResource("5_ctvyo")]
+[node name="Torreta" parent="." unique_id=2015839753 groups=["enemies"] instance=ExtResource("5_ctvyo")]
 position = Vector2(433, 48)
 
-[node name="EnemyIa3" parent="." unique_id=2073523965 instance=ExtResource("6_qixtg")]
+[node name="EnemyIa3" parent="." unique_id=2073523965 groups=["enemies"] instance=ExtResource("6_qixtg")]
 position = Vector2(407, 158)
 
-[node name="EnemyIa2" parent="." unique_id=431166763 instance=ExtResource("6_qixtg")]
+[node name="EnemyIa2" parent="." unique_id=431166763 groups=["enemies"] instance=ExtResource("6_qixtg")]
 position = Vector2(311, 160)
 
-[node name="EnemyIa" parent="." unique_id=1693415337 instance=ExtResource("6_qixtg")]
+[node name="EnemyIa" parent="." unique_id=1693415337 groups=["enemies"] instance=ExtResource("6_qixtg")]
 position = Vector2(214, 159)
 
-[node name="Drone3" parent="." unique_id=1896149847 instance=ExtResource("7_nt65e")]
+[node name="Drone3" parent="." unique_id=1896149847 groups=["enemies"] instance=ExtResource("7_nt65e")]
 position = Vector2(348, 83)
 
-[node name="Drone2" parent="." unique_id=1586270804 instance=ExtResource("7_nt65e")]
+[node name="Drone2" parent="." unique_id=1586270804 groups=["enemies"] instance=ExtResource("7_nt65e")]
 position = Vector2(308, 83)
 
-[node name="Drone" parent="." unique_id=1710618743 instance=ExtResource("7_nt65e")]
+[node name="Drone" parent="." unique_id=1710618743 groups=["enemies"] instance=ExtResource("7_nt65e")]
 position = Vector2(268, 83)

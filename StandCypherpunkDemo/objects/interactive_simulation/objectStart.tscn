@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bs2tdf7m0kw6"]
+
+[ext_resource type="Script" uid="uid://dvcljvum1y6wp" path="res://objects/interactive_simulation/object_start.gd" id="1_n4h3j"]
+[ext_resource type="Texture2D" uid="uid://btucvk21fwotl" path="res://assets/objects/iniciar.png" id="2_tfa6g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_novhx"]
+size = Vector2(29, 10.480125)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4h3j"]
+size = Vector2(30, 8.515)
+
+[node name="ObjectStart" type="Area2D" unique_id=869263224]
+script = ExtResource("1_n4h3j")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=911836105]
+texture = ExtResource("2_tfa6g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1619420884]
+position = Vector2(-0.025, 0.2400623)
+shape = SubResource("RectangleShape2D_novhx")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2031693523]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=407367377]
+position = Vector2(0, 1.2574999)
+shape = SubResource("RectangleShape2D_n4h3j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
