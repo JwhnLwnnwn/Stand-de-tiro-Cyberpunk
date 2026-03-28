@@ -3,25 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://je83n413talx" path="res://assets/screens/tela_inicial_col.png" id="1_v86rl"]
 [ext_resource type="Theme" uid="uid://dm5vtt7gncpsa" path="res://UI/theme/tema_personalizado.tres" id="2_con2f"]
 [ext_resource type="Script" uid="uid://cxnducqpt5l06" path="res://UI/animation/hover_effect_btn.gd" id="2_v86rl"]
-[ext_resource type="Shader" uid="uid://c77k01h2t31h8" path="res://effects/shaders/vhs_wiggle_credits.gdshader" id="4_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://beyuh171oy613" path="res://effects/lights/light.png" id="5_4ytvr"]
-[ext_resource type="AudioStream" uid="uid://0nv8x002fwpa" path="res://assets/music/cyberpunk.mp3" id="8_13sgg"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ytvr"]
-shader = ExtResource("4_mhnvy")
-shader_parameter/brightness = 1.4
-shader_parameter/contrast = 1.08
-shader_parameter/saturation = 1.1
-shader_parameter/gamma = 1.05
-shader_parameter/scanline_strength = 0.95
-shader_parameter/scanline_density = 1.15
-shader_parameter/scanline_speed = 0.5
-shader_parameter/jitter_px = 1.8
-shader_parameter/wobble_px = 1.5
-shader_parameter/glow_strength = 0.25
-shader_parameter/glow_threshold = 0.65
-shader_parameter/vignette_strength = 0.35
-shader_parameter/vignette_softness = 0.6
+[ext_resource type="AudioStream" uid="uid://b30tkwx3metbw" path="res://assets/music/cyberpunk.ogg" id="5_g3eks"]
 
 [node name="MenuControl" type="Control" unique_id=791704901]
 layout_mode = 3
@@ -155,23 +138,15 @@ shadow_filter_smooth = 4.6
 texture = ExtResource("5_4ytvr")
 texture_scale = 0.51
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1412259334]
-material = SubResource("ShaderMaterial_4ytvr")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
 [node name="Cyberpunk" type="AudioStreamPlayer" parent="." unique_id=1074464951]
-stream = ExtResource("8_13sgg")
+stream = ExtResource("5_g3eks")
 autoplay = true
 bus = &"Trilha"
 parameters/looping = true
 
 [connection signal="mouse_entered" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_hover_enter"]
 [connection signal="mouse_exited" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_hover_exit"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_start_btn_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/start_btn" to="HBoxContainer/VBoxContainer/start_btn" method="on_start_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/tutorial_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_tutorial_btn_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/exit_btn" to="HBoxContainer/VBoxContainer/start_btn" method="_on_exit_btn_pressed"]

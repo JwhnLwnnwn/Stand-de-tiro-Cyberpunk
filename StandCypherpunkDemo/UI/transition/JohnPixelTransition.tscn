@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dhca35t6enqd1"]
 
-[ext_resource type="Script" uid="uid://b2upgq3vlq5o2" path="res://UI/transition/pixel_transition.gd" id="1_301s3"]
+[ext_resource type="Script" uid="uid://b2upgq3vlq5o2" path="res://manager/pixel_transition.gd" id="1_301s3"]
 [ext_resource type="Texture2D" uid="uid://bvvrihhy7eh04" path="res://UI/transition/transitions_frame/transition1.png" id="2_5hefl"]
 [ext_resource type="Texture2D" uid="uid://da63alyserwfo" path="res://UI/transition/transitions_frame/transition2.png" id="3_4mp2m"]
 [ext_resource type="Texture2D" uid="uid://rhb3w4fsk02k" path="res://UI/transition/transitions_frame/transition3.png" id="4_irgdj"]
@@ -67,7 +67,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"transition",
-"speed": 20.0
+"speed": 16.0
 }]
 
 [node name="PixelTransitionJohn" type="CanvasLayer" unique_id=214850521]
@@ -79,5 +79,4 @@ script = ExtResource("1_301s3")
 position = Vector2(320, 180)
 sprite_frames = SubResource("SpriteFrames_vgwyd")
 animation = &"transition"
-frame = 7
-frame_progress = 0.84327185
+frame_progress = 0.100948974

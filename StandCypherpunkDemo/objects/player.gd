@@ -14,10 +14,17 @@ var _is_moving: bool = false
 var _can_shoot: bool = true
 var _recoil_tween: Tween
 
+# interacoes
+var current_interactable = null
+
 func _physics_process(delta: float) -> void:
 	_move(delta)
 	_aim()
 	_shoot()
+	
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and current_interactable:
+		current_interactable.interact() 
 
 func _move(delta: float) -> void:
 	var dir = Vector2(
