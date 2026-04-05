@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bi5v381yxbv88"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_00h3p"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="1_rgncx"]
+[ext_resource type="Texture2D" uid="uid://cewdxvimycqmi" path="res://assets/weapons/ak_47.png" id="2_msf50"]
+[ext_resource type="Texture2D" uid="uid://yis3c1ytpxfe" path="res://assets/hud_weapons/ak_47.png" id="2_oow7j"]
+
+[resource]
+script = ExtResource("1_rgncx")
+weapon_name = "Ak-47"
+weapon_sprite = ExtResource("2_msf50")
+hud_sprite = ExtResource("2_oow7j")
+bullet_scene = ExtResource("1_00h3p")
+max_ammo = 20
+fire_cooldown = 0.4
+automatic = true
+damage = 2.0
+recoil_offset = 0.5

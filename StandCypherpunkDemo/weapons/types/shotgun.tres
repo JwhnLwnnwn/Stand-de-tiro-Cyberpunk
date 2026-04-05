@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cyttvliho6lcj"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_nsobi"]
+[ext_resource type="Texture2D" uid="uid://dxc0etx63wvlg" path="res://assets/hud_weapons/shotgun.png" id="2_h5qj0"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="2_rudhw"]
+[ext_resource type="Texture2D" uid="uid://dutx4y643bry3" path="res://assets/weapons/shotgun.png" id="3_h5qj0"]
+
+[resource]
+script = ExtResource("2_rudhw")
+weapon_name = "Shotgun"
+weapon_sprite = ExtResource("3_h5qj0")
+hud_sprite = ExtResource("2_h5qj0")
+bullet_scene = ExtResource("1_nsobi")
+max_ammo = 6
+recoil_offset = 0.9

@@ -31,7 +31,7 @@ metadata/_edit_lock_ = true
 position = Vector2(308, 174)
 
 [node name="Player" parent="." unique_id=673219421 groups=["player"] instance=ExtResource("2_e124b")]
-position = Vector2(24, 364)
+position = Vector2(319, 257)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=8764812]
 offset = Vector2(0, -80)

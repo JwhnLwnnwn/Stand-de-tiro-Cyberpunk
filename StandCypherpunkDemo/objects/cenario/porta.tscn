@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bkttars6gkx8n"]
+
+[ext_resource type="Texture2D" uid="uid://cng8sgf36c7rc" path="res://assets/objects/porta.png" id="1_rd64a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0hpt"]
+size = Vector2(4, 48)
+
+[node name="Porta" type="Area2D" unique_id=941765537]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178431689]
+texture = ExtResource("1_rd64a")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273999221]
+shape = SubResource("RectangleShape2D_w0hpt")

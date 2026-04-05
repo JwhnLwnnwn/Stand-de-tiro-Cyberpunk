@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bxemki0nkt2wn"]
+
+[ext_resource type="Texture2D" uid="uid://cnungayym4w03" path="res://assets/objects/municao.png" id="1_081f4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bln7t"]
+size = Vector2(23, 48)
+
+[node name="CaixaMunicao" type="Area2D" unique_id=929944863]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844241745]
+texture = ExtResource("1_081f4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434655176]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_bln7t")
