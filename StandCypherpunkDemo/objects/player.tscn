@@ -1,21 +1,16 @@
 [gd_scene format=3 uid="uid://cblxbxd4egvuk"]
 
 [ext_resource type="Script" uid="uid://dejea3ritr5o5" path="res://objects/player.gd" id="1_vlhpq"]
-[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="2_eywii"]
 [ext_resource type="Texture2D" uid="uid://b2r0ystimy2xe" path="res://assets/sprites/player.png" id="3_uxov2"]
+[ext_resource type="PackedScene" uid="uid://c8r0kmqmftlx6" path="res://weapons/Weapon.tscn" id="4_f46kd"]
+[ext_resource type="Script" uid="uid://nc3vbde3rqwo" path="res://objects/weapon_manager.gd" id="4_nmc1l"]
+[ext_resource type="Resource" uid="uid://bbh5br10lo0ap" path="res://weapons/types/hand.tres" id="5_i825w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v3es"]
 size = Vector2(31, 18)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=673219421]
 script = ExtResource("1_vlhpq")
-bullet_scene = ExtResource("2_eywii")
-
-[node name="Weapon" type="Polygon2D" parent="." unique_id=89783775]
-position = Vector2(-3, -2.000001)
-scale = Vector2(0.5, 0.4)
-color = Color(0.537255, 0, 0.027451, 1)
-polygon = PackedVector2Array(22, -14.999998, 24, -42.499996, 16, -39.999996)
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=256604319]
 
@@ -30,4 +25,11 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_1v3es")
 
 [node name="ShootPart" type="Node2D" parent="." unique_id=2123231873]
-position = Vector2(7, -19)
+visible = false
+position = Vector2(7, -17)
+
+[node name="WeaponManager" type="Node" parent="." unique_id=2027282658]
+script = ExtResource("4_nmc1l")
+default_weapon = ExtResource("5_i825w")
+
+[node name="Weapon" parent="WeaponManager" unique_id=259146772 instance=ExtResource("4_f46kd")]

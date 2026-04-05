@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://eruvaplintl4"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_4ke14"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="2_10ppl"]
+[ext_resource type="Texture2D" uid="uid://cm3454cpwnj61" path="res://assets/hud_weapons/pistola.png" id="2_ixye2"]
+[ext_resource type="Texture2D" uid="uid://cb3o3ecnrf6sg" path="res://assets/weapons/pistola.png" id="3_ixye2"]
+
+[resource]
+script = ExtResource("2_10ppl")
+weapon_name = "Pistola"
+weapon_sprite = ExtResource("3_ixye2")
+hud_sprite = ExtResource("2_ixye2")
+bullet_scene = ExtResource("1_4ke14")
+damage = 1.0

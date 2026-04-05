@@ -2,29 +2,19 @@ extends CharacterBody2D
 
 var PLAYER_VELOCITY: float = 200.0
 
-@onready var muzzle: Marker2D = $Muzzle
-@onready var shoot_part = $ShootPart
+@onready var weapon_manager = $WeaponManager
 
-@export var bullet_scene: PackedScene
-@export var fire_cooldown: float = 0.2
-
-var current_weapon: WeaponData = null
-var current_ammo: int = 0
-var _is_moving: bool = false
-var _can_shoot: bool = true
-var _recoil_tween: Tween
-
-# interacoes
+# interações
 var current_interactable = null
 
 func _physics_process(delta: float) -> void:
 	_move(delta)
 	_aim()
-	_shoot()
-	
+	_handle_shoot()
+
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and current_interactable:
-		current_interactable.interact() 
+		current_interactable.interact()
 
 func _move(delta: float) -> void:
 	var dir = Vector2(
@@ -40,28 +30,18 @@ func _move(delta: float) -> void:
 func _aim() -> void:
 	var mouse_pos = get_global_mouse_position()
 	var aim_direction: Vector2 = (mouse_pos - global_position).normalized()
-	rotation = aim_direction.angle() + PI/2
+	
+	rotation = aim_direction.angle() + PI / 2
 
-func _shoot() -> void:
-	if not _can_shoot:
-		return
-	if not Input.is_action_just_pressed("shoot"):
-		return
+func _handle_shoot() -> void:
+	var direction = (get_global_mouse_position() - global_position).normalized()
+	
+	if Input.is_action_pressed("shoot"):
+		weapon_manager.shoot(direction)
 
-	var bullet = bullet_scene.instantiate()
-	bullet.global_position = shoot_part.global_position
-	bullet.direction = (get_global_mouse_position() - global_position).normalized()
-	get_parent().add_child(bullet)
+func set_interactable(obj):
+	current_interactable = obj
 
-	_can_shoot = false
-	get_tree().create_timer(fire_cooldown).timeout.connect(func(): _can_shoot = true)
-
-func _spawn_bullet() -> void:
-	if bullet_scene == null:
-		return
-	var bullet = bullet_scene.instantiate()
-	# Posição e rotação saem do Muzzle
-	bullet.global_position = muzzle.global_position
-	bullet.rotation = muzzle.global_rotation
-	# Adiciona no pai para não herdar transformação do player
-	get_parent().add_child(bullet)
+func clear_interactable(obj):
+	if current_interactable == obj:
+		current_interactable = null
