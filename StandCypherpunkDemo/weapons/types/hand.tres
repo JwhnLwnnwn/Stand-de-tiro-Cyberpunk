@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://bbh5br10lo0ap"]
+
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="1_0ls2e"]
+[ext_resource type="Texture2D" uid="uid://3eophfoqtk11" path="res://assets/hud_weapons/soco_ui.png" id="1_gtut4"]
+[ext_resource type="Texture2D" uid="uid://cwhfvucwriekx" path="res://assets/weapons/soco.png" id="2_gtut4"]
+
+[resource]
+script = ExtResource("1_0ls2e")
+weapon_name = "Hand"
+weapon_sprite = ExtResource("2_gtut4")
+hud_sprite = ExtResource("2_gtut4")
+can_be_picked = false
+infinite_ammo = true
+ammo_icon = ExtResource("1_gtut4")
+damage = 0.8

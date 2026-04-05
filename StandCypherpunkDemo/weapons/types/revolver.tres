@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://wph2s2fi3fy7"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_tlphy"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="1_x2m3i"]
+[ext_resource type="Texture2D" uid="uid://bm5e3isjwgxnx" path="res://assets/hud_weapons/revolver.png" id="2_4pwp7"]
+[ext_resource type="Texture2D" uid="uid://dv6w8fng5mpx4" path="res://assets/weapons/revolver.png" id="2_tlphy"]
+
+[resource]
+script = ExtResource("1_x2m3i")
+weapon_name = "Revolver"
+weapon_sprite = ExtResource("2_tlphy")
+hud_sprite = ExtResource("2_4pwp7")
+bullet_scene = ExtResource("1_tlphy")
+max_ammo = 6
+damage = 3.0
+recoil_on_move = true

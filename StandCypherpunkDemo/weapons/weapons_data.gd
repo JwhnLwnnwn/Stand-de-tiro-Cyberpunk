@@ -2,10 +2,16 @@ class_name WeaponData
 extends Resource
 
 @export var weapon_name: String = "Weapon"
+@export var weapon_sprite: Texture2D
+@export var hud_sprite: Texture2D
 @export var bullet_scene: PackedScene
+@export var can_be_picked: bool = true
 
 # Munição
 @export var max_ammo: int = 12
+# pra hand
+@export var infinite_ammo: bool = false
+@export var ammo_icon: Texture2D
 
 # Cadência
 @export var fire_cooldown: float = 0.25
@@ -16,7 +22,7 @@ extends Resource
 @export var spread: float = 0.02
 @export var bullet_speed: float = 900.0
 @export var bullet_range: float = 600.0
-@export var damage: int = 1
+@export var damage: float = 0.6
 @export var piercing: bool = false
 
 # Explosão (RPG)

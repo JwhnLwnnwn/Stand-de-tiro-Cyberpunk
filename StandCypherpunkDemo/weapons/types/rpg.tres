@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cconawkdpoiso"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_3h823"]
+[ext_resource type="Texture2D" uid="uid://bpw6hc4iaop48" path="res://assets/hud_weapons/lança_foguete.png" id="2_b3sht"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="2_ddkxu"]
+[ext_resource type="Texture2D" uid="uid://wbu4nr68x4qw" path="res://assets/weapons/lanca_foguete.png" id="3_b3sht"]
+
+[resource]
+script = ExtResource("2_ddkxu")
+weapon_name = "RPG"
+weapon_sprite = ExtResource("3_b3sht")
+hud_sprite = ExtResource("2_b3sht")
+bullet_scene = ExtResource("1_3h823")
+max_ammo = 2
+damage = 3.0
+explosive = true
+explosion_radius = 0.5
