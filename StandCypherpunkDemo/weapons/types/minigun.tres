@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ifb1np87680o"]
+
+[ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_jutvc"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="1_pjjmb"]
+[ext_resource type="Texture2D" uid="uid://bl2u2r5wvim76" path="res://assets/hud_weapons/arma_energia.png" id="2_ttccy"]
+[ext_resource type="Texture2D" uid="uid://ciqrlg7gm367w" path="res://assets/weapons/arma_energia.png" id="3_ttccy"]
+
+[resource]
+script = ExtResource("1_pjjmb")
+weapon_name = "Minigun"
+weapon_sprite = ExtResource("3_ttccy")
+hud_sprite = ExtResource("2_ttccy")
+bullet_scene = ExtResource("1_jutvc")
+max_ammo = 30
+fire_cooldown = 0.6
+automatic = true
+damage = 1.0
+piercing = true
+recoil_offset = 0.6
+recoil_on_move = true

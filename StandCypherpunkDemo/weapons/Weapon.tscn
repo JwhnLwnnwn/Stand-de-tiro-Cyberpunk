@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c8r0kmqmftlx6"]
+
+[ext_resource type="Script" uid="uid://du37w3fv56h5d" path="res://weapons/weapon.gd" id="1_wwppb"]
+[ext_resource type="Resource" uid="uid://bbh5br10lo0ap" path="res://weapons/types/hand.tres" id="2_nhg6n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwppb"]
+size = Vector2(2, 5)
+
+[node name="Weapon" type="Node2D" unique_id=259146772]
+script = ExtResource("1_wwppb")
+data = ExtResource("2_nhg6n")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1846436186]
+
+[node name="Muzzle" type="Marker2D" parent="." unique_id=84673782]
+
+[node name="MeleeHitbox" type="Area2D" parent="." unique_id=2032962671]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeHitbox" unique_id=1984710750]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wwppb")
+
+[connection signal="area_entered" from="MeleeHitbox" to="." method="_on_meele_hitbox_area_entered"]

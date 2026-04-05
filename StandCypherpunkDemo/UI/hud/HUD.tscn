@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bccckh2jk6c7a"]
+
+[ext_resource type="Texture2D" uid="uid://blmfxpjwunjr5" path="res://assets/scenario/hud_armas.png" id="1_2fjfc"]
+[ext_resource type="Script" uid="uid://dt388kdskl5w4" path="res://UI/hud/hud.gd" id="1_lc7ts"]
+
+[node name="Hud" type="CanvasLayer" unique_id=463020088]
+script = ExtResource("1_lc7ts")
+
+[node name="Container" type="Sprite2D" parent="." unique_id=1202228857]
+position = Vector2(75, 295)
+texture = ExtResource("1_2fjfc")
+
+[node name="WeaponIcon" type="Sprite2D" parent="." unique_id=484806103]
+position = Vector2(59, 295)
+
+[node name="AmmoLabel" type="Label" parent="." unique_id=1253883610]
+offset_left = 94.0
+offset_top = 281.0
+offset_right = 122.0
+offset_bottom = 309.0
+
+[node name="AmmoIcon" type="TextureRect" parent="." unique_id=128459015]
+offset_left = 93.0
+offset_top = 280.0
+offset_right = 123.0
+offset_bottom = 310.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch_mode = 3
