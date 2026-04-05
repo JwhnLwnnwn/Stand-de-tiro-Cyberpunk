@@ -22,6 +22,7 @@ size = Vector2(37, 898)
 script = ExtResource("1_e124b")
 
 [node name="bg" type="Sprite2D" parent="." unique_id=1080162065]
+visible = false
 position = Vector2(318, 181)
 scale = Vector2(2.8402774, 2.840278)
 texture = ExtResource("1_4bh5q")
@@ -31,7 +32,7 @@ metadata/_edit_lock_ = true
 position = Vector2(308, 174)
 
 [node name="Player" parent="." unique_id=673219421 groups=["player"] instance=ExtResource("2_e124b")]
-position = Vector2(24, 364)
+position = Vector2(319, 257)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=8764812]
 offset = Vector2(0, -80)

@@ -4,9 +4,6 @@ var can_toggle := true
 
 func _ready() -> void:
 	updateStatusEnemies(false)
-
-func _process(delta: float) -> void:
-	pass
 	
 func updateStatusEnemies(active: bool) -> void:
 	for enemy in get_tree().get_nodes_in_group("enemies"):
