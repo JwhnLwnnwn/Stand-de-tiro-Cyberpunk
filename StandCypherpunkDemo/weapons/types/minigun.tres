@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://ifb1np87680o"]
 
+[ext_resource type="Texture2D" uid="uid://3cjl2nm50ofh" path="res://assets/hud_weapons/foguete_ui.png" id="1_b5tyc"]
 [ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_jutvc"]
 [ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="1_pjjmb"]
 [ext_resource type="Texture2D" uid="uid://bl2u2r5wvim76" path="res://assets/hud_weapons/arma_energia.png" id="2_ttccy"]
@@ -12,6 +13,7 @@ weapon_sprite = ExtResource("3_ttccy")
 hud_sprite = ExtResource("2_ttccy")
 bullet_scene = ExtResource("1_jutvc")
 max_ammo = 30
+ammo_icon = ExtResource("1_b5tyc")
 fire_cooldown = 0.6
 automatic = true
 damage = 1.0

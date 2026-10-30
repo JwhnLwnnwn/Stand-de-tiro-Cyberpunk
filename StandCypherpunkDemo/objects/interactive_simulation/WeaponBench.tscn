@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cq5jcg83xqsew"]
+
+[ext_resource type="Script" uid="uid://bpkxjyfy5p2iv" path="res://objects/interactive_simulation/weapon_bench.gd" id="1_aig4j"]
+[ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="2_2bt80"]
+[ext_resource type="PackedScene" uid="uid://bi801frcwdyci" path="res://objects/weapons_in_scene/WeaponPickup.tscn" id="2_pickup"]
+[ext_resource type="Resource" uid="uid://bi5v381yxbv88" path="res://weapons/types/ak47.tres" id="3_okoy3"]
+[ext_resource type="Resource" uid="uid://cconawkdpoiso" path="res://weapons/types/rpg.tres" id="4_081hf"]
+[ext_resource type="Resource" uid="uid://btlk7yit2j173" path="res://weapons/types/rifle_cacador.tres" id="5_sr1bb"]
+[ext_resource type="Resource" uid="uid://wph2s2fi3fy7" path="res://weapons/types/revolver.tres" id="6_sc2lr"]
+[ext_resource type="Resource" uid="uid://eruvaplintl4" path="res://weapons/types/pistola.tres" id="7_gpjch"]
+[ext_resource type="Resource" uid="uid://ifb1np87680o" path="res://weapons/types/minigun.tres" id="8_2woia"]
+[ext_resource type="Resource" uid="uid://cyttvliho6lcj" path="res://weapons/types/shotgun.tres" id="9_scwf7"]
+[ext_resource type="Resource" uid="uid://cr0f3ns6rf03x" path="res://weapons/types/submetralhadora.tres" id="10_vo6wo"]
+
+[node name="WeaponBench" type="Node2D" unique_id=412216520]
+script = ExtResource("1_aig4j")
+weapons = Array[ExtResource("2_2bt80")]([ExtResource("3_okoy3"), ExtResource("4_081hf"), ExtResource("5_sr1bb"), ExtResource("6_sc2lr"), ExtResource("7_gpjch"), ExtResource("8_2woia"), ExtResource("9_scwf7"), ExtResource("10_vo6wo")])
+pickup_scene = ExtResource("2_pickup")
+
+[node name="WeaponPickups" type="Node2D" parent="." unique_id=875215955]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1483556757]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1845148806]
