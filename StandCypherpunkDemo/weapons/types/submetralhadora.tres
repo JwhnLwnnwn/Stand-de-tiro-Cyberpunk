@@ -1,5 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://cr0f3ns6rf03x"]
 
+[ext_resource type="Texture2D" uid="uid://e1f7f4fym8l1" path="res://assets/hud_weapons/shotgun_ui.png" id="1_abp57"]
 [ext_resource type="PackedScene" uid="uid://cowwgs4eaowar" path="res://objects/bullet.tscn" id="1_u7l3k"]
 [ext_resource type="Texture2D" uid="uid://dyfsc84r1v5n1" path="res://assets/hud_weapons/submetralhadora.png" id="2_abp57"]
 [ext_resource type="Script" uid="uid://c6rsqamgxpkfi" path="res://weapons/weapons_data.gd" id="2_crtn1"]
@@ -12,6 +13,7 @@ weapon_sprite = ExtResource("3_abp57")
 hud_sprite = ExtResource("2_abp57")
 bullet_scene = ExtResource("1_u7l3k")
 max_ammo = 10
+ammo_icon = ExtResource("1_abp57")
 automatic = true
 damage = 1.0
 recoil_offset = 0.5

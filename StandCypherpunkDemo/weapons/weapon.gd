@@ -4,6 +4,7 @@ extends Node2D
 @export var data: WeaponData
 @onready var muzzle = $Muzzle
 @onready var melee_hitbox = $MeleeHitbox
+@export var weapon_offset: Vector2 = Vector2(7, 0)
 
 @onready var sprite = $Sprite2D
 var current_ammo: int
@@ -11,8 +12,9 @@ var can_shoot: bool = true
 signal ammo_changed(current, max)
 
 func _ready():
-	_apply_data();
-		
+	position = weapon_offset
+	_apply_data()
+
 func set_weapon(new_data: WeaponData):
 	data = new_data
 	_apply_data()
@@ -20,26 +22,29 @@ func set_weapon(new_data: WeaponData):
 func _apply_data():
 	if data == null:
 		return
-	
+
 	current_ammo = data.max_ammo
 	emit_signal("ammo_changed", current_ammo, data.max_ammo)
-	
+
+	# se tiver sem arma, apenas mao, vai esconder ela de aparecer
+	sprite.visible = data.weapon_name.to_lower() != "hand"
+
 	if data.weapon_sprite:
 		sprite.texture = data.weapon_sprite
 
 func shoot(direction: Vector2):
 	if not can_shoot:
 		return
-	
-	rotation = direction.angle()
+
 	can_shoot = false
 
 	if data.bullet_scene == null:
 		_melee_attack()
 	else:
 		if current_ammo <= 0:
+			can_shoot = true
 			return
-		
+
 		current_ammo -= 1
 		emit_signal("ammo_changed", current_ammo, data.max_ammo)
 		_spawn_bullets(direction)

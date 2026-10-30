@@ -17,7 +17,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 config/name="A Mira"
 config/version="1.0"
 run/main_scene="uid://f5oy4xbswrf0"
-config/features=PackedStringArray("4.6", "GL Compatibility")
+config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://de7prpv1tigxg"
 
 [audio]

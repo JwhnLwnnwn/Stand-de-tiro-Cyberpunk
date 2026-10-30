@@ -4,13 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://cbqnf1ayp6rml" path="res://assets/weapons/bullet.png" id="2_xbcx7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l3m35"]
-size = Vector2(1, 1)
+size = Vector2(1, 2)
 
 [node name="Bullet" type="Area2D" unique_id=732342054]
 script = ExtResource("1_3ndsa")
 
 [node name="SpriteBullet" type="Sprite2D" parent="." unique_id=1239129528]
-scale = Vector2(0.0625, 0.0625)
+position = Vector2(0, -2.9802322e-08)
+scale = Vector2(0.0625, 0.125)
 texture = ExtResource("2_xbcx7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=546588598]
@@ -19,5 +20,6 @@ shape = SubResource("RectangleShape2D_l3m35")
 [node name="Screen Notifier" type="VisibleOnScreenNotifier2D" parent="." unique_id=2144914725]
 position = Vector2(2.98023e-08, 2.98023e-08)
 scale = Vector2(0.05, 0.05)
+rect = Rect2(-10, -19.999998, 20, 39.999996)
 
 [connection signal="screen_exited" from="Screen Notifier" to="." method="_on_screen_notifier_screen_exited"]

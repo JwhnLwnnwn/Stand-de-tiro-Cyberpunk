@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v3es"]
 size = Vector2(31, 18)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=673219421]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=673219421 groups=["player"]]
 script = ExtResource("1_vlhpq")
 
 [node name="Muzzle" type="Marker2D" parent="." unique_id=256604319]
@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_1v3es")
 visible = false
 position = Vector2(7, -17)
 
-[node name="WeaponManager" type="Node" parent="." unique_id=2027282658]
+[node name="WeaponManager" type="Node2D" parent="." unique_id=2027282658]
 script = ExtResource("4_nmc1l")
 default_weapon = ExtResource("5_i825w")
 

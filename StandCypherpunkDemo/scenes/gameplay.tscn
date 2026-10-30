@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://4q5o0m7f6jbt" path="res://objects/enemies/torreta.tscn" id="5_ctvyo"]
 [ext_resource type="PackedScene" uid="uid://cbwxpidssavgw" path="res://objects/enemies/enemy_ia.tscn" id="6_qixtg"]
 [ext_resource type="PackedScene" uid="uid://claa2k2b66mwk" path="res://objects/enemies/drone.tscn" id="7_nt65e"]
+[ext_resource type="PackedScene" uid="uid://cq5jcg83xqsew" path="res://objects/interactive_simulation/WeaponBench.tscn" id="8_qixtg"]
 [ext_resource type="PackedScene" uid="uid://bs2tdf7m0kw6" path="res://objects/interactive_simulation/objectStart.tscn" id="9_101mb"]
 [ext_resource type="PackedScene" uid="uid://bkttars6gkx8n" path="res://objects/cenario/porta.tscn" id="10_hbo4f"]
 [ext_resource type="PackedScene" uid="uid://bccckh2jk6c7a" path="res://UI/hud/HUD.tscn" id="11_ctvyo"]
@@ -30,7 +31,7 @@ metadata/_edit_lock_ = true
 [node name="RangeMira" parent="." unique_id=1998623109 instance=ExtResource("3_101mb")]
 position = Vector2(308, 174)
 
-[node name="Player" parent="." unique_id=673219421 groups=["player"] instance=ExtResource("2_e124b")]
+[node name="Player" parent="." unique_id=673219421 instance=ExtResource("2_e124b")]
 position = Vector2(24, 364)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=8764812]
@@ -38,7 +39,10 @@ offset = Vector2(0, -80)
 position_smoothing_enabled = true
 
 [node name="ObjectStart" parent="." unique_id=869263224 instance=ExtResource("9_101mb")]
-position = Vector2(181, 293.49)
+position = Vector2(199, 293)
+
+[node name="WeaponBench" parent="." unique_id=412216520 instance=ExtResource("8_qixtg")]
+position = Vector2(307, 315)
 
 [node name="WallsDelimiter" type="StaticBody2D" parent="." unique_id=960710079]
 
