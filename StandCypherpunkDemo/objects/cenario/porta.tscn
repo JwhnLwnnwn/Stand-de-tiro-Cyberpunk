@@ -1,15 +1,34 @@
 [gd_scene format=3 uid="uid://bkttars6gkx8n"]
 
 [ext_resource type="Texture2D" uid="uid://cng8sgf36c7rc" path="res://assets/objects/porta.png" id="1_rd64a"]
+[ext_resource type="Script" uid="uid://w33pa5wg40vn" path="res://objects/cenario/porta.gd" id="1_w0hpt"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w0hpt"]
-size = Vector2(4, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_interaction"]
+size = Vector2(12, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_collision"]
+size = Vector2(4, 49.5)
 
 [node name="Porta" type="Area2D" unique_id=941765537]
+script = ExtResource("1_w0hpt")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1178431689]
+[node name="InteractionShape" type="CollisionShape2D" parent="." unique_id=1732422013]
+shape = SubResource("RectangleShape2D_interaction")
+
+[node name="Hinge" type="Node2D" parent="." unique_id=379726336]
+position = Vector2(0, -24)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hinge" unique_id=1738496378]
+position = Vector2(0, 23)
 texture = ExtResource("1_rd64a")
 flip_v = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1273999221]
-shape = SubResource("RectangleShape2D_w0hpt")
+[node name="StaticBody2D" type="StaticBody2D" parent="Hinge" unique_id=62124499]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hinge/StaticBody2D" unique_id=849171547]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_collision")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

@@ -13,9 +13,9 @@ func _on_body_exited(body):
 	if body.is_in_group("player"):
 		body.current_interactable = null
 
-func interact():
+func interact(_player: Node = null):
 	var gameplay = get_tree().get_first_node_in_group("gameplay")
-
+	
 	if gameplay.simulation_active:
 		gameplay.stopSimulation()
 	else:
